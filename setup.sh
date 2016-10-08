@@ -1,17 +1,10 @@
 #!/usr/bin/env zsh
 
-cd "$(dirname "${BASH_SOURCE}")";
-
 git pull origin master;
 
-function doIt() {
-	rsync --exclude ".git/" \
-		--exclude ".DS_Store" \
-		--exclude ".sh" \
-		--exclude "README.md" \
-		--exclude "LICENSE-MIT.txt" \
-		-avh --no-perms . ~;
-}
+cp -r .vimrc $HOME
 
-doIt;
-unset doIt;
+if [ ! -d $HOME/.vim ]; then
+  ln -s .vim $HOME
+fi
+

@@ -1,3 +1,6 @@
+" pathogen first
+execute pathogen#infect()
+
 " blame vi
 set nocompatible
 
@@ -69,6 +72,9 @@ set ttyfast
 
 " status bar
 set laststatus=2
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 set showcmd
 
@@ -93,4 +99,9 @@ set background=dark
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 colorscheme solarized
+
+" airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
